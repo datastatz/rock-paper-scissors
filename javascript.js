@@ -65,13 +65,13 @@ function playRound() {
         
         ){
             humanScore++;
-        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nYou win this round! \nHuman: ${humanScore} vs Computer: ${computerScore} `
+        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nYou win this round! \nAyman: ${humanScore} vs Computer: ${computerScore} `
         }
     
         else 
         {
             computerScore++;
-        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nThe computer wins this round! \nHuman: ${humanScore} vs Computer: ${computerScore}`
+        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nThe computer wins this round! \nAyman: ${humanScore} vs Computer: ${computerScore}`
         }
 
         
