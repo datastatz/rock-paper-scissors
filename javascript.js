@@ -1,9 +1,8 @@
 
 //Global variables
-computerScore = 0; //Initializing the score of the Computer
-HumanScore = 0; // Initializing the score of the Human
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+
+let humanScore = 0;
+let computerScore = 0;
 
 
 
@@ -38,7 +37,7 @@ function getHumanChoice() {
         }
 
         // If input is invalid, alert the user and continue the loop
-        alert("Invalid input. Please enter Rock, Paper, or Scissors.");
+        alert("Invalid input. Please enter 'Rock', 'Paper', or 'Scissors'.");
     }
 }
 
@@ -47,36 +46,46 @@ function getHumanChoice() {
 // Increments the round winner’s score 
 // And logs a winner announcement.
 
-function playRound(humanSelection, computerSelection) {
-    console.log(`You chose: ${humanSelection}`);
-    console.log(`Computer chose: ${computerSelection}`);
+function playRound() {
+    
+    const computerChoice = getComputerChoice();
+    const humanChoice = getHumanChoice();
+   
+
     
     
-    
-    if (humanSelection == computerSelection){
-        return "This is a draw! Nobody wins, go again!"
+        if (humanChoice == computerChoice) {
+        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nThis round is a draw!`
+        }
+    //when the human wins
+        else if (
+        (humanChoice == "Paper" && computerChoice == "Rock") || 
+        (humanChoice == "Rock" && computerChoice == "Scissors") ||
+        (humanChoice == "Scissors" && computerChoice == "Paper")
         
-    }
-    //When human wins
-    else if (
-        (humanSelection == "Rock" && computerSelection == "Scissors") || 
-        (humanSelection == "Paper" && computerSelection == "Rock") ||
-        (humanSelection == "Scissors" && computerSelection == "Paper") 
-            ){
-                
-                return "You have won this round!"
-            }
-            
-    else {(
-        (computerSelection == "Rock" && humanSelection == "Scissors") || 
-        (computerSelection == "Paper" && humanSelection == "Rock") ||
-        (computerSelection == "Scissors" && humanSelection == "Paper")
-    )
-        return "The computer has won this round!"
-    }
+        ){
+            humanScore++;
+        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nYou win this round! \nHuman: ${humanScore} vs Computer: ${computerScore} `
+        }
+    
+        else 
+        {
+            computerScore++;
+        return `You chose ${humanChoice} and the Computer chose ${computerChoice}, \nThe computer wins this round! \nHuman: ${humanScore} vs Computer: ${computerScore}`
+        }
+
+        
+    
 }
-    //if statements if 
 
+// A function that makes sure that the playRound function is called 5 times
 
-
-console.log(playRound(humanSelection, computerSelection));
+function playFive(){
+    let i = 5;
+    
+    while (i > 0) {
+        console.log(playRound());
+        i = i - 1;
+    } 
+}
+(playFive());
