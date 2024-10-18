@@ -1,0 +1,30 @@
+/* Removing default margins and paddings */
+* {
+    
+    
+    box-sizing: border-box;
+}
+
+/* Making the background pink */
+body {
+    background-color: pink;
+    height: 100vh; /* Ensures the background covers the full viewport height */
+    display: flex; /* Optional: Start setting up Flexbox */
+    justify-content: center; /* Optional: Flexbox centering */
+    align-items: center;     /* Optional: Flexbox centering */
+}
+
+/* Ensure all elements use border-box for consistent width/height calculations */
+html, body {
+    box-sizing: border-box;
+}
+
+.result-display {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 18px;
+    color: #333;
+    border: 1px solid black;
+    background-color: cornsilk;
+
+}
